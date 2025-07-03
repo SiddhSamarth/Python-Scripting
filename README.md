@@ -80,8 +80,3 @@ No additional dependencies are required unless specified within the individual s
 
 ![image](https://github.com/laaaaaarry/Python-scripts/assets/125237930/883d3b26-328c-4887-931e-0dbfa513246c)
 
-
-## License:
-
-This project is licensed under the MIT License - see the <a href="https://github.com/laaaaaarry/Python-scripts/blob/main/LICENSE">LICENSE</a> file for details.
-
