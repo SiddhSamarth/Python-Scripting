@@ -17,7 +17,7 @@ This repository consolidates 8 functional administrative and reconnaissance scri
 | Script | Primary Modules | Functionality & Practical Use Case |
 | :--- | :--- | :--- |
 | **[LogParser.py](./LogParser.py)** | `re`, `sys`, `os` | Parses structured syslog/application event logs, extracting timestamps, usernames, and messages into tabular reports. |
-| **[PortScanner.py](./PortScanner.py)** | `socket` | Multi-threaded TCP connect scanner verifying open listening ports across designated IP addresses. |
+| **[PortScanner.py](./PortScanner.py)** | `socket` | Sequential TCP connect scanner iterating through a port range on a designated host. |
 | **[GeoIP.py](./GeoIP.py)** | `requests` | Queries the IPInfo geolocation API to resolve external IP addresses to city, region, country, and ASN coordinates. |
 | **[StatusCode.py](./StatusCode.py)** | `requests` | Verifies web endpoint reachability and returns HTTP status codes (200, 301, 403, 404, 500). |
 | **[FileHasher.py](./FileHasher.py)** | `hashlib` | Generates MD5 and SHA-256 cryptographic hashes for specified files to verify integrity and check IOCs. |
@@ -106,9 +106,10 @@ pip install -r requirements.txt
 
 ---
 
-## Attribution & Acknowledgments
+## Provenance & Implementation Notes
 
-* Script exercise structure and demonstration methodology adapted from original lab exercises by Larry ([@laaaaaarry](https://github.com/laaaaaarry)).
+* **Personal Testing & Modifications:** Local testing, syntax debugging (`GeoIP.py`), CLI parameterization (`LogParser.py`), generation of sample test data (`sample_auth.log`), environment manifest creation (`requirements.txt`), and verification.
+* **Exercise Provenance:** Original script concepts and tutorial exercises adapted from coursework by Larry ([@laaaaaarry](https://github.com/laaaaaarry/Python-scripts)). Output screenshots reflect documented lab executions.
 
 ---
 
