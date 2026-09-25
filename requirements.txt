@@ -1,0 +1,2 @@
+# Python Scripting Toolkit Requirements
+requests>=2.28.0

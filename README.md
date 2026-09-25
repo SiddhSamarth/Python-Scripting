@@ -1,82 +1,120 @@
-# Python Scripts
+# Python Security & Automation Scripting Toolkit
 
-## Description: 
+A suite of 8 lightweight Python utilities demonstrating administrative automation, network reconnaissance, log parsing, file integrity hashing, and system auditing.
 
-Collection of Python scripts showcasing various skills and capabilities.
+---
 
-## Table of Contents:
+## Overview
 
-- Overview
-- Scripts
-- Usage
-- Dependencies
-- Example Outputs
-- License
+Security engineers and SOC analysts frequently rely on rapid, modular Python scripts to parse logs, verify service reachability, generate cryptographic hashes, and query external intelligence APIs. 
 
-## Overview:
+This repository consolidates 8 functional administrative and reconnaissance scripts designed for day-to-day security operations, network diagnostics, and endpoint auditing.
 
-This repository serves as a showcase of Python scripts that demonstrate my programming skills and problem-solving abilities. Each script is designed to showcase different aspects of Python development, including File Parsing, Log Analyzing & Automation.
+---
 
-## Scripts:
+## Script Inventory
 
-<a href="https://github.com/laaaaaarry/Python-scripts/blob/main/LogParser.py">LogParser.py</a> : This script analyzes the given log file, parsing its content and presenting the extracted data in a tabular format.
+| Script | Primary Modules | Functionality & Practical Use Case |
+| :--- | :--- | :--- |
+| **[LogParser.py](./LogParser.py)** | `re`, `sys`, `os` | Parses structured syslog/application event logs, extracting timestamps, usernames, and messages into tabular reports. |
+| **[PortScanner.py](./PortScanner.py)** | `socket` | Multi-threaded TCP connect scanner verifying open listening ports across designated IP addresses. |
+| **[GeoIP.py](./GeoIP.py)** | `requests` | Queries the IPInfo geolocation API to resolve external IP addresses to city, region, country, and ASN coordinates. |
+| **[StatusCode.py](./StatusCode.py)** | `requests` | Verifies web endpoint reachability and returns HTTP status codes (200, 301, 403, 404, 500). |
+| **[FileHasher.py](./FileHasher.py)** | `hashlib` | Generates MD5 and SHA-256 cryptographic hashes for specified files to verify integrity and check IOCs. |
+| **[SystemInfo.py](./SystemInfo.py)** | `platform`, `os` | Audits endpoint system architecture, OS release version, hostname, and processor environment. |
+| **[PasswordGenerator.py](./PasswordGenerator.py)** | `random`, `string` | Dynamically generates cryptographically diverse passwords with configurable character sets. |
+| **[MailClient.py](./MailClient.py)** | `smtplib` | Lightweight SMTP automation script for forwarding security notifications and alerts. |
 
-<a href="https://github.com/laaaaaarry/Python-scripts/blob/main/PortScanner.py">PortScanner.py</a> : This script prompts the user for designated ports and an IP address, evaluates the provided ports, and reports the open ports.
+---
 
-<a href="https://github.com/laaaaaarry/Python-scripts/blob/main/MailClient.py">MailClient.py</a> : This script leverages the messaging capabilities of Python to seamlessly send emails as per user requirements.
+## Tool Demonstrations & Outputs
 
-<a href="https://github.com/laaaaaarry/Python-scripts/blob/main/GeoIP.py">GeoIP.py</a> : This script provides comprehensive geolocation information for a specified IP address.
+### 1. LogParser.py
+Parses log lines matching standard timestamp-user patterns into structured tables:
+<p align="center">
+  <img src="./images/step_1.png" alt="LogParser Output" width="650" />
+</p>
 
-<a href="https://github.com/laaaaaarry/Python-scripts/blob/main/StatusCode.py">StatusCode.py</a> : This script efficiently verifies the functionality of the provided URLs by checking their accessibility.
+### 2. PortScanner.py
+Scans target IP addresses for open TCP socket ports:
+<p align="center">
+  <img src="./images/step_2.png" alt="PortScanner Output" width="650" />
+</p>
 
-<a href="https://github.com/laaaaaarry/Python-scripts/blob/main/SystemInfo.py">SystemInfo.py</a> : This script delivers comprehensive system information for the host on which it is executed.
+### 3. GeoIP.py
+Retrieves IP geolocation metadata from IPInfo:
+<p align="center">
+  <img src="./images/step_3.png" alt="GeoIP Output" width="650" />
+</p>
 
-<a href="https://github.com/laaaaaarry/Python-scripts/blob/main/FileHasher.py">FileHasher.py</a> : This script generates MD5 or SHA-256 hash values for the specified file, ensuring data integrity and security.
+### 4. StatusCode.py
+Tests HTTP response codes for web service availability:
+<p align="center">
+  <img src="./images/step_4.png" alt="StatusCode Output" width="650" />
+</p>
 
-<a href="https://github.com/laaaaaarry/Python-scripts/blob/main/PasswordGenerator.py">PasswordGenerator.py</a> : This script dynamically generates random passwords of user-defined lengths, enhancing security and flexibility.
+### 5. SystemInfo.py
+Extracts operating system and host environment details:
+<p align="center">
+  <img src="./images/step_5.png" alt="SystemInfo Output" width="650" />
+</p>
 
-## Usage:
+### 6. FileHasher.py
+Computes SHA-256 and MD5 checksums for file integrity verification:
+<p align="center">
+  <img src="./images/step_6.png" alt="FileHasher Output" width="650" />
+</p>
 
-To explore each script, simply navigate to the respective script file in the scripts directory. 
+### 7. PasswordGenerator.py
+Generates high-entropy random passwords:
+<p align="center">
+  <img src="./images/step_7.png" alt="PasswordGenerator Output" width="650" />
+</p>
 
-Instructions on usage and any required input will be provided in the comments within each script.
+---
 
-## Dependencies:
+## Setup & Execution
 
-All scripts are written in Python 3.x. 
+### Prerequisites
 
-No additional dependencies are required unless specified within the individual script files.
+```bash
+git clone https://github.com/SiddhSamarth/Python-Scripting.git
+cd Python-Scripting
 
-## Example Outputs:
+# Install required dependencies
+pip install -r requirements.txt
+```
 
-- **LogParser.py**
+### Running the Scripts
 
-![image](https://github.com/laaaaaarry/Python-scripts/assets/125237930/afd555c0-a3fd-4986-8c46-b2b50e97ce9d)
+* **Log Parsing:**
+  ```bash
+  python LogParser.py sample_auth.log
+  ```
+* **Port Scanning:**
+  ```bash
+  python PortScanner.py
+  ```
+* **IP Geolocation:**
+  ```bash
+  python GeoIP.py
+  ```
+* **File Hashing:**
+  ```bash
+  python FileHasher.py
+  ```
 
-- **PortScanner.py**
+---
 
-![image](https://github.com/laaaaaarry/Python-scripts/assets/125237930/1eccf0b8-6e14-4708-9db9-f14515d38aa1)
+## Attribution & Acknowledgments
 
-- **GeoIP.py**
+* Script exercise structure and demonstration methodology adapted from original lab exercises by Larry ([@laaaaaarry](https://github.com/laaaaaarry)).
 
-![image](https://github.com/laaaaaarry/Python-scripts/assets/125237930/7f79bd0e-e4e2-4adf-b7d4-0dc5d7124676)
+---
 
-- **StatusCode.py**
+## Author & Links
 
-![image](https://github.com/laaaaaarry/Python-scripts/assets/125237930/0a61d675-78a7-47c7-815b-982973e8c18e)
-
-
-- **SystemInfo.py**
-
-![image](https://github.com/laaaaaarry/Python-scripts/assets/125237930/714ad4c4-0719-4728-935e-f47d7f633abb)
-
-
-- **FileHasher.py**
-
-![image](https://github.com/laaaaaarry/Python-scripts/assets/125237930/e32f5905-ff4d-40e9-b285-c733d7d28a53)
-
-
-- **PasswordGenerater.py**
-
-![image](https://github.com/laaaaaarry/Python-scripts/assets/125237930/883d3b26-328c-4887-931e-0dbfa513246c)
-
+* **Author:** Siddh Samarth
+* **GitHub:** [@SiddhSamarth](https://github.com/SiddhSamarth)
+* **Portfolio:** [siddhsamarth.in](https://siddhsamarth.in)
+* **LinkedIn:** [samarthsiddh](https://www.linkedin.com/in/siddhsamarth/)
