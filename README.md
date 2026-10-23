@@ -109,7 +109,6 @@ pip install -r requirements.txt
 ## Provenance & Implementation Notes
 
 * **Personal Testing & Modifications:** Local testing, syntax debugging (`GeoIP.py`), CLI parameterization (`LogParser.py`), generation of sample test data (`sample_auth.log`), environment manifest creation (`requirements.txt`), and verification.
-* **Exercise Provenance:** Original script concepts and tutorial exercises adapted from coursework by Larry ([@laaaaaarry](https://github.com/laaaaaarry/Python-scripts)). Output screenshots reflect documented lab executions.
 
 ---
 
